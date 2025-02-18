@@ -1,0 +1,48 @@
+body{
+    background-color: #838355;
+    
+}
+.Titulos{
+  font-family:monospace;
+}
+.caja{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px;
+  background-color: aliceblue;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 3px solid black;
+}
+.boton{
+  width: 50;
+  height: 50;
+  
+}    
+.boton:hover {
+  background-color: chocolate;
+  width: 70px;
+  height: 70px;
+  border: 3px solid black;
+}
+.boton:active{
+background-color: rgb(28, 241, 63);
+}
+#caja4{
+  clear: left;
+}
+#caja7{
+  width: 150px;
+  height: 300px;
+  clear: left;
+  .boton{
+    width: 150px;
+    height: 300px;
+  }
+}
+#imagen{
+  overflow: hidden;
+}

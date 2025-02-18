@@ -1,0 +1,21 @@
+body{
+    background-color: bisque;
+}
+.caja{
+    height: 250px;
+    width: 190px;
+    background-color: white;
+    border: 5px solid #000000;
+    float: left;
+    overflow: hidden;
+    margin: 5px;
+}
+.letra{
+    font-family: fantasy;
+    margin-left: 5px;
+    max-width: 1000px;
+}
+
+#caja2{
+    clear:left;
+}
