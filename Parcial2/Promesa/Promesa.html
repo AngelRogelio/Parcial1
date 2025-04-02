@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let promesa = new Promise((resolve, reject) => {
+        let n = window.prompt("teclee su nombre");
+        let a = window.prompt("teclee su apellido");
+        resolve(n + " " + a);
+      });
+
+      //La funcion concatenar no se va a correr, hasta que se acabe la varable promesa.
+      function concatenar(nom, ape) {
+        let nomMay = nom + " " + ape;
+        window.alert(nomMay);
+      }
+
+      promesa.then(concatenar);
+    </script>
+  </body>
+</html>

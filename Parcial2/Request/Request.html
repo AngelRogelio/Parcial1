@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #btn {
+        width: 100px;
+        height: 100px;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #resultado {
+        font-family: fantasy;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">picame para un elemento de star wars.</button>
+    <p id="resultado"></p>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("btn").addEventListener("click", function () {
+          let solicitud = new XMLHttpRequest();
+          solicitud.onload = function () {
+            console.log(solicitud.response);
+          };
+          solicitud.open("GET", "URL", true);
+          solicitud.send();
+        });
+      };
+
+      document.getElementById("btn").addEventListener("click", function () {
+        let solicitud = new XMLHttpRequest();
+
+        solicitud.onload = function () {
+          if (solicitud.status === 200) {
+            let datos = JSON.parse(solicitud.responseText); // Convierte la respuesta en JSON
+            let texto = `Nombre: ${datos.name}\nAltura: ${datos.height}\nPeso: ${datos.mass}\nGénero: ${datos.gender}`;
+
+            document.getElementById("resultado").textContent = texto; // Lo muestra en el párrafo
+          } else {
+            document.getElementById("resultado").textContent =
+              "Error al obtener datos.";
+          }
+        };
+
+        solicitud.open("GET", "https://swapi.dev/api/people/1", true); // URL válida de Star Wars
+        solicitud.send();
+      });
+    </script>
+  </body>
+</html>
