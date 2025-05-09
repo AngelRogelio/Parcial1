@@ -1,0 +1,24 @@
+.padre{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+    overflow: scroll;
+    height: 300px;
+    width: 300px;
+}
+.caja{
+    flex: none;
+    background-color: white;
+    border: 5px solid black;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+}
+#caja9{
+    align-content: center;
+
+    width: 300px;
+    }
+

@@ -1,0 +1,17 @@
+$color: #e74c3c;
+
+@mixin boton($color) {
+  background-color: $color;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.boton-rojo {
+  @include boton($color);
+}
+
+.boton-azul {
+  @include boton(#3498db);
+}

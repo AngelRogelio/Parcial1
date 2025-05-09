@@ -1,0 +1,47 @@
+body{
+    background-color: bisque;
+}
+.padre{
+    margin: 5px;
+    border: 3px dotted black;
+}
+.caja{
+    margin: 5px;
+    border: 3px solid black;
+    height: 150px;
+    width: 150px;
+}
+#caja1{
+    position: absolute;
+    left: 40%;
+    top: 10%;
+}
+#caja2{
+    position: fixed;
+    right: 0;
+    
+}
+#caja3{
+    position: relative;
+}
+#caja4{
+    position: static;
+}
+#caja5{
+    position: sticky;
+}
+#caja6{
+    
+}
+#caja7{
+    
+}
+#caja8{
+    
+}
+#caja9{
+    
+}
+#caja10{
+    
+}

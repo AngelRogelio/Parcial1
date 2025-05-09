@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <div>
+      <input type="text" id="nombre" placeholder="Nombre" />
+      <button onclick="enviarNombre()">Guardar Nombre</button>
+    </div>
+
+    
+    <script>
+        async function enviarNombre() {
+          const nombre = document.getElementById("nombre").value;
+  
+          if (!nombre) {
+            alert("Por favor, escribe un nombre");
+            return;
+          }
+  
+          try {
+            const response = await fetch("http://localhost:3000/guardar-nombre", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ nombre }),
+            });
+  
+            const result = await response.text();
+            alert(result);
+          } catch (error) {
+            console.error("Error al enviar el nombre:", error);
+            alert("Hubo un error al guardar el nombre");
+          }
+        }
+      </script>
+  </body>
+</html>

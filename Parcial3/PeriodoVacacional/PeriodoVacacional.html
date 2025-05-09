@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <button id="btn">Picame</button>
+    </div>
+
+    <script>
+      //t es tabla (table)
+      //tr es columnas (table row)
+      //td es filas (table data)
+      //th es encabezados (table head)
+      let encabezados = ["Nombre", "Paterno", "Materno"];
+      let datos = [
+        {
+          nombre: "AndresM",
+          paterno: "Lopez",
+          materno: "Obrador",
+        },
+        {
+          nombre: "Enrique",
+          paterno: "Peña",
+          materno: "Nieto",
+        },
+        {
+          nombre: "Vicente",
+          paterno: "Fox",
+          materno: "Quezada",
+        },
+      ];
+      let boton = document.getElementById("btn");
+
+      boton.onclick = function () {
+        let tabla = document.createElement("table");
+        let encabezado = document.createElement("tr");
+        for (let i = 0; i < encabezados.length; i++) {
+          let th = document.createElement("th");
+          th.innerHTML = encabezados[i];
+          encabezado.appendChild(th);
+        }
+        tabla.appendChild(encabezado);
+        for (let i = 0; i < datos.length; i++) {
+          let fila = document.createElement("tr");
+          for (let j = 0; j < encabezados.length; j++) {
+            let celda = document.createElement("td");
+            celda.innerHTML = datos[i][encabezados[j].toLowerCase()];
+            fila.appendChild(celda);
+          }
+          tabla.appendChild(fila);
+        }
+        document.getElementById("contenedor").appendChild(tabla);
+      };
+    </script>
+  </body>
+</html>

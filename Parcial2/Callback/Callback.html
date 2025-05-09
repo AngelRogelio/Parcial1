@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //Esta funcion proceso, tiene como parametro, la funcion concatenar.
+      function proceso(fun) {
+        let n = window.prompt("Teclee su nombre");
+        let a = window.prompt("Teclee su apellido");
+        fun(n, a);
+      }
+      //La funcion concatenar no se va a correr, hasta que se acabe la funcion proceso.
+      function concatenar(nom, ape) {
+        let nomMay = nom + " " + ape;
+        window.alert(nomMay);
+      }
+      //El la funcion proceso ejecutandose.
+      proceso(concatenar); 
+    </script>
+  </body>
+</html>

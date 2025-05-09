@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #text {
+        font-family: fantasy;
+        font-size: xx-large;
+        width: 500px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="" id="text"></textarea>
+    <button id="btn">Picame</button>
+    <ul id="lista-frutas"></ul>
+    <script>
+      const frutas = [];
+      const lista = document.getElementById("lista-frutas");
+      const btn = document.getElementById("btn");
+      const text = document.getElementById("text");
+
+      btn.addEventListener("click", () => {
+        const nuevoDato = text.value.trim(); // Obtener y limpiar el dato del textarea
+        if (nuevoDato) {// Verificar que no esté vacío
+          frutas.push(nuevoDato); // Agregar al arreglo
+          const objlista = document.createElement("li");
+          objlista.textContent = nuevoDato; // Crear un nuevo elemento de lista
+          lista.appendChild(objlista); // Agregarlo al DOM
+          textArea.value = ""; // Limpiar el textarea
+        } else {
+          alert("Por favor, escribe un dato antes de agregarlo.");
+        }
+      });
+    </script>
+  </body>
+</html>

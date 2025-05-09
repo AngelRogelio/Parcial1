@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li id="item1">Elemento 1</li>
+      <li id="item2">Elemento 2</li>
+      <li id="item3">Elemento 3</li>
+    </ul>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("lista").addEventListener("click", (e) => {
+          console.log("Click en la lista");
+          console.log(e.target.id);
+        });
+        document.getElementById("item1").addEventListener("click", (e) => {
+          console.log("Click en el elemento 1");
+        });
+        document.getElementById("item2").addEventListener("click", (e) => {
+          console.log("Click en el elemento 2");
+        });
+      };
+    </script>
+  </body>
+</html>
